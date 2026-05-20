@@ -26,10 +26,10 @@ const Banner = () => {
       </p>
      
       <button className="btn bg-[#2563EB] text-white font-semibold">
-        <Link href={'/products'}>See All Doctors</Link>
+        <Link href={'/doctors'}>See All Doctors</Link>
       </button>
       <button className="btn ml-3 bg-[#2563EB] text-white font-semibold">
-        <Link href={'/products'}>Learn More</Link>
+        Learn More
       </button>
     </div>
   </div>

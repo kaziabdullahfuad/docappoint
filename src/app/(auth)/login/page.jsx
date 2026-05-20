@@ -8,7 +8,7 @@ import { Mail, Lock, ArrowRight } from 'lucide-react';
 
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { signIn } from '@/lib/auth-client';
+import { authClient, signIn } from '@/lib/auth-client';
 import toast from 'react-hot-toast';
 
 export default function Login() {
@@ -31,6 +31,9 @@ export default function Login() {
                 
                 
             })
+
+            // const { data:tokenData} = await authClient.token()
+            // console.log(tokenData);
             
             if(error){
                 
