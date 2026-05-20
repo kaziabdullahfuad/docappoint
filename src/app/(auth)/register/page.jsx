@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation';
 
 export default function Register() {
      const router=useRouter();
-     
+
     const handleRegister=async(e)=>{
        
         e.preventDefault();
@@ -37,10 +37,10 @@ export default function Register() {
         // alert("Signup Successful");
          toast.success("Sign up Successful");
          
-        // window.location.href="/"
+            window.location.href = '/';
         }
 
-        router.push("/");
+        // router.push("/");
         
     }
 

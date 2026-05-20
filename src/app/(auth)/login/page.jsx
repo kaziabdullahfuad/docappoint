@@ -42,10 +42,11 @@ export default function Login() {
             // alert("Signup Successful");
              toast.success("Login Successful");
              
-            // window.location.href="/"
+                window.location.href="/"
+                return;
             }
     
-            router.push("/");
+            // router.push("/");
             
         }
 

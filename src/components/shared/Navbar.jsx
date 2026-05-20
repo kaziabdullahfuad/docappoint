@@ -5,9 +5,27 @@ import Navlink from './Navlink';
 import logo from '../../assets/docappointlogo.png'
 import Image from 'next/image';
 
+import { useRouter } from 'next/navigation';
+import { authClient, signOut } from '@/lib/auth-client';
+import { Avatar } from '@heroui/react';
+import toast from 'react-hot-toast';
+
 const Navbar = () => {
 
- 
+   const router = useRouter()
+
+  const userData=authClient.useSession()
+  // console.log(userData,"User Info");
+  const user=userData.data?.user
+  // console.log(user);
+
+  const handleSignOut=async()=>{
+
+    await signOut();
+    // router.push('/'); // redirect to home page
+    window.location.href = '/';
+    toast.success("Successfully Logged out");
+  }
 
     return (
         <div className='bg-white shadow-sm'>
@@ -49,12 +67,12 @@ const Navbar = () => {
   </div>
   <div className="navbar-end">
     
-  {/* {!user &&  <div>
-        <button className='btn bg-[#FF9F1C] text-white rounded-full'>
+  {!user &&  <div>
+        <button className='btn bg-[#2563EB] text-white rounded-full'>
         <Link href={'/login'}>Login</Link>
     </button>
 
-      <button className='btn bg-[#FF9F1C] text-white rounded-full'>
+      <button className='btn bg-[#2563EB] text-white rounded-full'>
           <Link href={'/register'}>Register</Link>
       </button>
     </div> }
@@ -66,18 +84,18 @@ const Navbar = () => {
         <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
       </Avatar>
       
-        <button onClick={handleSignOut} className='btn bg-[#FF9F1C] text-white rounded-full'>Log Out</button>
+        <button onClick={handleSignOut} className='btn bg-[#2563EB] text-white rounded-full'>Log Out</button>
 
       </div>
-    } */}
+    }
 
-     <button className='btn bg-[#2563EB] text-white rounded-full'>
+     {/* <button className='btn bg-[#2563EB] text-white rounded-full'>
         <Link href={'/login'}>Login</Link>
     </button>
 
       <button className='btn bg-[#2563EB] text-white rounded-full'>
           <Link href={'/register'}>Register</Link>
-      </button>
+      </button> */}
 
   </div>
 </div>
