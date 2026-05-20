@@ -31,7 +31,7 @@ const TopRatedDoctors = () => {
 
   return (
     <section className="py-16 px-4">
-      <div className="max-w-7xl mx-auto">
+      <div className="md:w-10/12 mx-auto">
 
         {/* Heading */}
         <div className="text-center mb-10">
