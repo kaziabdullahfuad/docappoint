@@ -1,0 +1,104 @@
+[
+  {
+    "id": "d1",
+    "name": "Dr. Ayesha Rahman",
+    "specialty": "Cardiologist",
+    "rating": 4.9,
+    "reviews": 124,
+    "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlf8fHx8fGVufDB8fHx8",
+    "experience": "10 years",
+    "availability": [
+      "09:00 AM - 12:00 PM",
+      "04:00 PM - 07:00 PM"
+    ],
+    "description": "Highly experienced cardiologist specializing in heart diseases and preventive cardiac care.",
+    "hospital": "Labaid Cardiac Hospital",
+    "location": "Dhanmondi, Dhaka",
+    "fee": 800
+  },
+  {
+    "id": "d2",
+    "name": "Dr. Tanvir Hasan",
+    "specialty": "Dentist",
+    "rating": 4.7,
+    "reviews": 98,
+    "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3WXMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
+    "experience": "7 years",
+    "availability": [
+      "10:00 AM - 01:00 PM",
+      "06:00 PM - 09:00 PM"
+    ],
+    "description": "Expert in cosmetic dentistry, root canal treatment, and oral health care.",
+    "hospital": "Square Hospital",
+    "location": "Panthapath, Dhaka",
+    "fee": 600
+  },
+  {
+    "id": "d3",
+    "name": "Dr. Nusrat Jahan",
+    "specialty": "Dermatologist",
+    "rating": 4.8,
+    "reviews": 110,
+    "image": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixlib=0.0.0",
+    "experience": "8 years",
+    "availability": [
+      "11:00 AM - 02:00 PM",
+      "05:00 PM - 08:00 PM"
+    ],
+    "description": "Specialized in skin care, acne treatment, and advanced dermatological procedures.",
+    "hospital": "Popular Diagnostic Center",
+    "location": "Uttara, Dhaka",
+    "fee": 700
+  },
+  {
+    "id": "d4",
+    "name": "Dr. Mahmudul Karim",
+    "specialty": "Neurologist",
+    "rating": 4.9,
+    "reviews": 156,
+    "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=764&auto=format&fit=crop&ixlib=rb-0.0.0",
+    "experience": "12 years",
+    "availability": [
+      "08:00 AM - 11:00 AM",
+      "03:00 PM - 06:00 PM"
+    ],
+    "description": "Experienced neurologist treating migraines, stroke, and nervous system disorders.",
+    "hospital": "United Hospital",
+    "location": "Gulshan, Dhaka",
+    "fee": 1000
+  },
+  {
+    "id": "d5",
+    "name": "Dr. Sabrina Islam",
+    "specialty": "Pediatrician",
+    "rating": 4.8,
+    "reviews": 132,
+    "image": "https://images.unsplash.com/photo-1659353888906-adb3e0041693?q=80&w=1170&auto=format&fit=crop&ixlib=rb-0.0.0",
+    "experience": "9 years",
+    "availability": [
+      "09:30 AM - 12:30 PM",
+      "05:00 PM - 08:00 PM"
+    ],
+    "description": "Dedicated child specialist providing compassionate care for infants and children.",
+    "hospital": "Evercare Hospital",
+    "location": "Bashundhara, Dhaka",
+    "fee": 750
+  },
+  {
+    "id": "d6",
+    "name": "Dr. Fahim Chowdhury",
+    "specialty": "Orthopedic Surgeon",
+    "rating": 4.9,
+    "reviews": 180,
+    "image": "https://images.unsplash.com/photo-1700041785712-649e859d9909?q=80&w=1170&auto=format&fit=crop&ixlib=0.0.0",
+    "experience": "15 years",
+    "availability": [
+      "10:00 AM - 01:00 PM",
+      "04:00 PM - 07:00 PM"
+    ],
+    "description": "Orthopedic specialist focused on bone, joint, and sports injury treatments.",
+    "hospital": "Apollo Hospital",
+    "location": "Banani, Dhaka",
+    "fee": 1200
+  }
+]
