@@ -1,12 +1,13 @@
 'use client';
 
-import { Button, Input } from '@heroui/react';
+import { Button, Input, Separator } from '@heroui/react';
 
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import toast from 'react-hot-toast';
-import { signUp } from '@/lib/auth-client';
+import { authClient, signUp } from '@/lib/auth-client';
 import { useRouter } from 'next/navigation';
+import { FcGoogle } from 'react-icons/fc';
 
 export default function Register() {
      const router=useRouter();
@@ -20,6 +21,20 @@ export default function Register() {
 
         const registerData=Object.fromEntries(formData.entries());
         // console.log(registerData);
+
+        const password = registerData.password;
+
+        const passwordRegex =
+        /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+
+        if (!passwordRegex.test(password)) {
+
+        toast.error(
+            "Password must contain at least 1 uppercase letter, 1 lowercase letter, and be at least 6 characters long."
+        );
+
+        return;
+        }
         
         const { data, error } = await signUp.email({
 
@@ -42,6 +57,12 @@ export default function Register() {
 
         // router.push("/");
         
+    }
+
+    const handleGoogleSignin = async() => {
+    await authClient.signIn.social({
+        provider: "google"
+    })
     }
 
     return (
@@ -129,7 +150,11 @@ export default function Register() {
                                     name="password"
                                     
                                     className="border-2 border-slate-200 hover:border-blue-600/50 focus-within:border-blue-600 transition-all duration-300 h-14 bg-white w-full rounded-2xl"
+                                    
                                 />
+                                <p className="text-xs text-slate-500 ml-1">
+  Must contain uppercase, lowercase, and minimum 6 characters
+</p>
                             </div>
 
                             <Button
@@ -141,6 +166,15 @@ export default function Register() {
                             </Button>
                         </form>
 
+                        <div className="flex justify-center items-center gap-3">
+            <Separator/>
+           <div className="whitespace-nowrap"> Or sign up with </div>
+              <Separator/>
+            </div>
+        <div>
+            <Button onClick={handleGoogleSignin} variant="outline" className={'w-full rounded-none'}><FcGoogle /> Sign in with Google</Button>
+        </div>
+                        
                         <div className="text-center pt-2">
                             <p className="text-sm text-slate-500 font-medium">
                                 Already have an account?{' '}

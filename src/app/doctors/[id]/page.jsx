@@ -1,20 +1,31 @@
+import BookingModal from "@/components/BookingModal";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 import React from "react";
 
-const fetchSingleDoctor=async(id)=>{
+const fetchSingleDoctor=async(id,token)=>{
 
-    const res=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/doctors/${id}`)
+    const res=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/doctors/${id}`,{
+      headers:{
+        "authorization": `Bearer ${token}` || ""
+      }
+    })
     const data=res.json();
     return data || {};
 }
 
 const DoctorDetails = async ({ params }) => {
   const { id } = await params;
-
+   const {token} = await auth.api.getToken({
+      headers: await headers(), // headers containing the user's session token
+    });
+  
+    // console.log(token);
 //   const res = await fetch(`http://localhost:8080/doctors/${id}`);
 
 //   const doctor = await res.json();
 
-    const doctor=await fetchSingleDoctor(id);
+    const doctor=await fetchSingleDoctor(id,token);
     console.log(doctor);
 
   return (
@@ -63,9 +74,10 @@ const DoctorDetails = async ({ params }) => {
           </div>
 
           {/* Button */}
-          <button className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl transition">
+          {/* <button className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl transition">
             Book Appointment
-          </button>
+          </button> */}
+          <BookingModal doctor={doctor} ></BookingModal>
         </div>
       </div>
     </div>

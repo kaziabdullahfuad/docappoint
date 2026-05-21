@@ -18,5 +18,5 @@ export async function proxy(request) {
 // export default function proxy(request: NextRequest) { ... }
  
 export const config = {
-  matcher: ['/doctors/:id'],
+  matcher: ['/doctors/:id','/dashboard/:path*',],
 }

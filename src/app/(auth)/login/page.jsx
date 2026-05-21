@@ -53,6 +53,12 @@ export default function Login() {
             
         }
 
+         const handleGoogleSignin = async() => {
+            await authClient.signIn.social({
+                provider: "google"
+            })
+        }
+
     return (
         <div className="min-h-[80vh] flex flex-col bg-slate-50">
             <div className="flex items-center justify-center p-4">
@@ -69,7 +75,7 @@ export default function Login() {
                         </div>
 
                         <div className="space-y-4">
-                            <Button
+                            <Button onClick={handleGoogleSignin}
                                 variant="bordered"
                                 className="w-full h-12 font-bold rounded-2xl border-slate-200 hover:bg-slate-50 transition-colors gap-3"
                             >
@@ -129,6 +135,15 @@ export default function Login() {
                                     name="password"
                                     className="border-2 border-slate-200 hover:border-blue-600/50 focus-within:border-blue-600 transition-all duration-300 h-14 bg-white w-full rounded-2xl"
                                 />
+                            </div>
+
+                             <div className="flex justify-end">
+                                <Link
+                                    href="#"
+                                    className="text-sm font-bold text-blue-600 hover:underline underline-offset-4 transition-all"
+                                >
+                                    Forgot password?
+                                </Link>
                             </div>
                            
                             <Button

@@ -8,25 +8,17 @@ const DoctorsPage = () => {
 
   const [doctors, setDoctors] = useState([]);
   const [search, setSearch] = useState("");
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-
     const loadDoctors = async () => {
-
-      setLoading(true);
-
       const data = await fetchDoctors();
-
       setDoctors(data);
-
-      setLoading(false);
     };
 
     loadDoctors();
-
   }, []);
 
+  // Filter doctors by name
   const filteredDoctors = doctors.filter((doctor) =>
     doctor.name.toLowerCase().includes(search.toLowerCase())
   );
@@ -43,7 +35,7 @@ const DoctorsPage = () => {
         book your next appointment in minutes.
       </p>
 
-      {/* Search */}
+      {/* Search Input */}
       <div className="mb-8">
         <input
           type="text"
@@ -54,32 +46,19 @@ const DoctorsPage = () => {
         />
       </div>
 
-      {/* Loader */}
-      {
-        loading ? (
+      {/* Doctors Grid */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
 
-          <div className="flex justify-center items-center py-20">
-            <span className="loading loading-spinner loading-lg text-blue-600"></span>
-          </div>
+        {
+          filteredDoctors.map((doctor) => (
+            <DoctorCard
+              key={doctor._id}
+              doctor={doctor}
+            />
+          ))
+        }
 
-        ) : (
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-
-            {
-              filteredDoctors.map((doctor) => (
-                <DoctorCard
-                  key={doctor._id}
-                  doctor={doctor}
-                />
-              ))
-            }
-
-          </div>
-
-        )
-      }
-
+      </div>
     </div>
   );
 };

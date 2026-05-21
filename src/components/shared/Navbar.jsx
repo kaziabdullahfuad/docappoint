@@ -40,9 +40,9 @@ const Navbar = () => {
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
         <li><Navlink href={'/'}>Home</Navlink></li>
         <li>
-         <Navlink href={'/products'}>All Appointments</Navlink>
+         <Navlink href={'/doctors'}>All Appointments</Navlink>
         </li>
-        <li> <Navlink href={'/my-profile'}>Dashboard</Navlink></li>
+        <li> <Navlink href={'/dashboard'}>Dashboard</Navlink></li>
       </ul>
     </div>
    <Image 
@@ -62,7 +62,7 @@ const Navbar = () => {
       <li>
          <Navlink href={'/doctors'}>All Appointments</Navlink>
       </li>
-      <li><Navlink href={'/my-profile'}>Dashboard</Navlink></li>
+      <li><Navlink href={'/dashboard'}>Dashboard</Navlink></li>
     </ul>
   </div>
   <div className="navbar-end">
