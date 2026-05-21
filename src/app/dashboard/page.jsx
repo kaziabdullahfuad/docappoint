@@ -10,7 +10,7 @@ const DashboardPage = () => {
 
   return (
     <div className="md:w-10/12 mx-auto p-6">
-
+      {/* dashboard page */}
       <h1 className="text-2xl font-bold mb-4">
         Dashboard
       </h1>
