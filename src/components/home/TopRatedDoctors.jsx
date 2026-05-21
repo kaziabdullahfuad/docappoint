@@ -9,7 +9,7 @@ const TopRatedDoctors = () => {
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
-        const res = await fetch("http://localhost:8080/doctors");
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/doctors`);
         const data = await res.json();
 
         // Sort by rating (highest first)

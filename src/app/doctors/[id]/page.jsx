@@ -20,8 +20,7 @@ const DoctorDetails = async ({ params }) => {
       headers: await headers(), // headers containing the user's session token
     });
   
-    // console.log(token);
-//   const res = await fetch(`http://localhost:8080/doctors/${id}`);
+  
 
 //   const doctor = await res.json();
 

@@ -4,6 +4,8 @@ import DoctorCard from "@/components/home/DoctorCard";
 import { fetchDoctors } from "@/lib/doctors/data";
 import React, { useEffect, useState } from "react";
 
+
+
 const DoctorsPage = () => {
 
   const [doctors, setDoctors] = useState([]);
