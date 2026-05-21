@@ -17,6 +17,9 @@ DocAppoint is a modern doctor appointment booking platform where users can brows
 
 ---
 
+## Live Site URL
+https://docappoint-mu.vercel.app/
+
 ## 🛠️ Tech Stack
 
 ### Frontend
