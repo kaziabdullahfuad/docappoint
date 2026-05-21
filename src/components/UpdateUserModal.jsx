@@ -1,6 +1,7 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
 import {Button, Input, Label, Modal, Surface, TextField} from "@heroui/react";
+import toast from "react-hot-toast";
 import { BiUser } from "react-icons/bi";
 
 export function UpdateUserModal() {
@@ -18,7 +19,8 @@ export function UpdateUserModal() {
       name,
       image
     })
- 
+    
+    toast.success("User Information updated sucessfully");
     
   }
 
