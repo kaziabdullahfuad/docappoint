@@ -25,6 +25,7 @@ const BookingCard = ({
   const [open, setOpen] = useState(false);
 
   const [form, setForm] = useState({
+    userName,
     gender,
     phone,
     appointmentDate,
@@ -72,6 +73,7 @@ const BookingCard = ({
     e.preventDefault();
 
     const updatedData = {
+    userName:form.userName,
       gender: form.gender,
       phone: form.phone,
       appointmentDate: form.appointmentDate,
@@ -237,17 +239,20 @@ const BookingCard = ({
               </select>
 
             {/* patient name */}
-            <div>
-                <label className="font-bold" htmlFor="">Patient Name</label>
-              <input
-                name="username"
-                value={userName}
-                onChange={handleChange}
-                className="w-full border p-2 rounded"
-              />
+                    <div>
+            <label className="font-bold">
+                Patient Name
+            </label>
+
+           <input
+  name="userName"
+  value={form.userName || ""}
+  onChange={handleChange}
+  className="w-full border p-2 rounded"
+/>
             </div>
                 
-            <label className="font-bold" htmlFor="">Patient Number</label>
+            <label className="font-bold" htmlFor="">Patient Contact Number</label>
               <input
                 name="phone"
                 value={form.phone}
