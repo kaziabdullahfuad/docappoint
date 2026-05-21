@@ -11,6 +11,7 @@ const BookingCard = ({
 }) => {
   const {
     _id,
+    userName,
     doctorName,
     appointmentDate,
     appointmentTime,
@@ -141,6 +142,10 @@ const BookingCard = ({
             </h2>
 
             <p>
+              <strong>Patient Name:</strong> {userName}
+            </p>
+
+            <p>
               <strong>Email:</strong> {userEmail}
             </p>
 
@@ -231,6 +236,18 @@ const BookingCard = ({
                 <option>Female</option>
               </select>
 
+            {/* patient name */}
+            <div>
+                <label className="font-bold" htmlFor="">Patient Name</label>
+              <input
+                name="username"
+                value={userName}
+                onChange={handleChange}
+                className="w-full border p-2 rounded"
+              />
+            </div>
+                
+            <label className="font-bold" htmlFor="">Patient Number</label>
               <input
                 name="phone"
                 value={form.phone}
